@@ -8,5 +8,5 @@ slapadd -F /etc/openldap/slapd.d -l /opt/docker/organitzacio_edt.org.ldif
 slapadd -F /etc/openldap/slapd.d -l /opt/docker/usuaris-edt.org.ldiff
 chown -R ldap.ldap /etc/openldap/slapd.d/
 chown -R ldap.ldap /var/lib/ldap/
-/usr/sbin/slapd -u ldap -h "ldap:/// ldaps:/// ldapi:///" && echo "ok"
+/usr/sbin/slapd
 
