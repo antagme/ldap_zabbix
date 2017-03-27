@@ -12,6 +12,9 @@ RUN mkdir /var/tmp/home/2asix
 COPY scripts /scripts/
 COPY files /opt/docker
 RUN cp /opt/docker/krb5.keytab /etc/
+RUN chmod 600 /etc/krb5.keytab
+RUN setfacl -m u:ldap:r /etc/krb5.keytab
+RUN setfacl -m u:ldap:r /etc/pki/tls/private/slapd.pem
 RUN cp /usr/share/doc/krb5-server-ldap/kerberos.schema /etc/openldap/schema/
 #COPY configs /etc/
 #make executable and execute
