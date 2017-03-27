@@ -16,5 +16,5 @@ COPY files /opt/docker
 #make executable and execute
 RUN /usr/bin/chmod +x /scripts/startup-slapd.sh & bash /scripts/startup-slapd.sh ; exit 0
 #VOLUME ["/data"] 
-ENTRYPOINT ["/bin/bash"] 
+ENTRYPOINT /usr/sbin/slapd & /bin/bash
 EXPOSE 25 143 587 993 4190 8001 8002 9001 389
