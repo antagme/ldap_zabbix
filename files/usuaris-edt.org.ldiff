@@ -1,0 +1,262 @@
+#dn: ou=usuaris,dc=edt,dc=org
+#ou: usuaris
+#description: Container per usuaris del sistema linux
+#objectclass: organizationalunit
+
+dn: cn=Pau Pou,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Pau Pou
+cn: Pauet Pou
+sn: Pou
+homephone: 555-222-2220
+mail: pau@edt.org
+description: Watch out for this guy
+ou: Profes
+uid: pau
+uidNumber: 5000
+gidNumber: 200
+homeDirectory: /var/tmp/home/pau
+userPassword: {SSHA}NDkipesNQqTFDgGJfyraLz/csZAIlk2/
+
+dn: cn=Pere Pou,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Pere Pou
+sn: Pou
+homephone: 555-222-2221
+mail: pere@edt.org
+description: Watch out for this guy
+ou: Profes
+uid: pere
+uidNumber: 5001
+gidNumber: 200
+homeDirectory: /var/tmp/home/pere
+userPassword: {SSHA}ghmtRL11YtXoUhIP7z6f7nb8RCNadFe+
+
+dn: cn=Anna Pou,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Anna Pou
+cn: Anita Pou
+sn: Pou
+homephone: 555-222-2222
+mail: anna@edt.org
+description: Watch out for this girl
+ou: Alumnes
+uid: anna
+uidNumber: 5002
+gidNumber: 600
+homeDirectory: /var/tmp/home/anna
+userPassword: {SSHA}Bm4B3Bu/fuH6Bby9lgxfFAwLYrK0RbOq
+
+dn: cn=Marta Mas,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Marta Mas
+sn: Mas
+homephone: 555-222-2223
+mail: marta@edt.org
+description: Watch out for this girl
+ou: Alumnes
+uid: marta
+uidNumber: 5003
+gidNumber: 600
+homeDirectory: /var/tmp/home/marta
+userPassword: {SSHA}9+1F2f5vcW8z/tmSzYNWdlz5GbDCyoOw
+
+dn: cn=Jordi Mas,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Jordi Mas
+cn: Giorgios Mas
+sn: Mas
+homephone: 555-222-2224
+mail: jordi@edt.org
+description: Watch out for this girl
+ou: Profes
+ou: Alumnes
+uid: jordi
+uidNumber: 5004
+gidNumber: 200
+homeDirectory: /var/tmp/home/jordi
+userPassword: {SSHA}T5jrMgpJwZZgu0azkLIVoYhiG08/KGUv
+
+dn: cn=Admin System,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Administrador Sistema
+cn: System Admin
+sn: System
+homephone: 555-222-2225
+mail: anna@edt.org
+description: Watch out for this girl
+ou: system
+ou: admin
+uid: admin
+uidNumber: 10
+gidNumber: 204
+homeDirectory: /var/tmp/home/admin
+userPassword: {SSHA}4mS0FycWc5bkpW8/a396SGNDTQUlFSX3
+
+dn: cn=user01,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user01
+cn: alumne01 de 1asix de todos los santos
+sn: alumne01
+homephone: 555-222-0001
+mail: user01@edt.org
+description: alumne de 1asix
+ou: 1asix
+uid: user01
+uidNumber: 7001
+gidNumber: 610
+homeDirectory: /var/tmp/home/1asix/user01
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user02,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user02
+cn: alumne02 Pou Prat
+sn: alumne02
+homephone: 555-222-0002
+mail: user02@edt.org
+description: alumne de 1asix
+ou: 1asix
+uid: user02
+uidNumber: 7002
+gidNumber: 610
+homeDirectory: /var/tmp/home/1asix/user02
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user03,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user03
+cn: alumne03 Pou Prat
+sn: alumne03
+homephone: 555-222-0003
+mail: user03@edt.org
+description: alumne de 1asix
+ou: 1asix
+uid: user02
+uidNumber: 7003
+gidNumber: 610
+homeDirectory: /var/tmp/home/1asix/user03
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user04,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user04
+cn: alumne04 Pou Puig
+sn: alumne04
+homephone: 555-222-0004
+mail: user04@edt.org
+description: alumne de 1asix
+ou: 1asix
+uid: user04
+uidNumber: 7004
+gidNumber: 610
+homeDirectory: /var/tmp/home/1asix/user04
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user05,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user05
+cn: alumne05 Pou Prat
+sn: alumne05
+homephone: 555-222-0005
+mail: user05@edt.org
+description: alumne de 1asix
+ou: 1asix
+uid: user05
+uidNumber: 7005
+gidNumber: 610
+homeDirectory: /var/tmp/home/1asix/user05
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user06,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user06
+cn: alumne06 de 2asix de todos los santos
+sn: alumne06
+homephone: 555-222-0006
+mail: user06@edt.org
+description: alumne de 2asix
+ou: 2asix
+uid: user06
+uidNumber: 7006
+gidNumber: 611
+homeDirectory: /var/tmp/home/2asix/user06
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user07,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user07
+cn: alumne07 de 2asix de todos los santos
+sn: alumne07
+homephone: 555-222-0007
+mail: user07@edt.org
+description: alumne de 2asix
+ou: 2asix
+uid: user07
+uidNumber: 7007
+gidNumber: 611
+homeDirectory: /var/tmp/home/2asix/user07
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user08,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user08
+cn: alumne08 de 2asix de todos los santos
+sn: alumne08
+homephone: 555-222-0008
+mail: user08@edt.org
+description: alumne de 2asix
+ou: 2asix
+uid: user08
+uidNumber: 7008
+gidNumber: 611
+homeDirectory: /var/tmp/home/2asix/user08
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user09,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user09
+cn: alumne09 de 2asix de todos los santos
+sn: alumne09
+homephone: 555-222-0009
+mail: user09@edt.org
+description: alumne de 2asix
+ou: 2asix
+uid: user09
+uidNumber: 7009
+gidNumber: 611
+homeDirectory: /var/tmp/home/2asix/user09
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+dn: cn=user10,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: user10
+cn: alumne10 de 2asix de todos los santos
+sn: alumne10
+homephone: 555-222-0016
+mail: user10@edt.org
+description: alumne de 2asix
+ou: 2asix
+uid: user10
+uidNumber: 7010
+gidNumber: 611
+homeDirectory: /var/tmp/home/2asix/user10
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
+
+

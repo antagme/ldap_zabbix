@@ -1,0 +1,41 @@
+dn: dc=edt,dc=org
+dc: edt
+description: Escola del treball de Barcelona
+objectClass: dcObject
+objectClass: organization
+o: edt.org
+
+dn: ou=usuaris,dc=edt,dc=org
+ou: usuaris
+description: Container per usuaris del sistema linux
+objectclass: organizationalunit
+
+dn: ou=maquines,dc=edt,dc=org
+ou: maquines
+description: Container per a maquines linux
+objectclass: organizationalunit
+
+dn: ou=clients,dc=edt,dc=org
+ou: clients
+description: Container per a clients linux
+objectclass: organizationalunit
+
+dn: ou=productes,dc=edt,dc=org
+ou: productes
+description: Container per a productes linux
+objectclass: organizationalunit
+
+dn: ou=hosts,dc=edt,dc=org
+ou: host
+description: Container per a hosts
+objectclass: organizationalunit
+
+dn: ou=networks,dc=edt,dc=org
+ou: networks
+description: Container per networks
+objectclass: organizationalunit
+
+dn: ou=groups,dc=edt,dc=org
+ou: groups
+description: Container per usuaris del sistema linux
+objectclass: organizationalunit
