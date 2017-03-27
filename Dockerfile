@@ -2,7 +2,7 @@ FROM fedora
 MAINTAINER "Pedro Romero Aguado" <pedroromeroaguado@gmail.com> 
 
 #installs
-RUN dnf install -y openldap openldap-servers openldap-clients krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd 
+RUN dnf install -y openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd 
 # directoris
 RUN mkdir /opt/docker
 RUN mkdir /var/tmp/home
@@ -13,6 +13,7 @@ COPY scripts /scripts/
 COPY files /opt/docker
 RUN cp /opt/docker/ns* /etc/
 RUN cp -f /opt/docker/ldap.conf /etc/openldap/
+RUN cp -f /opt/docker/krb5.conf /etc/
 #Copying tls files for SASL
 RUN cp /opt/docker/cert.pem /etc/pki/tls/
 RUN cp /opt/docker/slapd.pem /etc/pki/tls/private/
