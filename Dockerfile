@@ -12,6 +12,7 @@ RUN mkdir /var/tmp/home/2asix
 COPY scripts /scripts/
 COPY files /opt/docker
 RUN cp /opt/docker/ns* /etc/
+RUN cp -f /opt/docker/ldap.conf /etc/openldap/
 #Copying tls files for SASL
 RUN cp /opt/docker/cert.pem /etc/pki/tls/
 RUN cp /opt/docker/slapd.pem /etc/pki/tls/private/
