@@ -16,7 +16,7 @@ COPY files /opt/docker
 
 #COPY configs /etc/
 
-RUN /scripts/startup-slapd.sh
+RUN chmod +x /scripts/startup-slapd.sh & /scripts/startup-slapd.sh
 
 #VOLUME ["/data"] 
 ENTRYPOINT ["/bin/bash"] 
