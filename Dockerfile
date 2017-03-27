@@ -18,7 +18,7 @@ COPY files /opt/docker
 RUN /usr/bin/echo "Creating DB edt.org..."
 RUN cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 RUN rm -rf /etc/openldap/slapd.d/*
-RUN slaptest -f /opt/docker/slapd-edt.org.acl.conf -F /etc/openldap/slapd.d
+RUN slaptest -u -f /opt/docker/slapd-edt.org.acl.conf -F /etc/openldap/slapd.d
 RUN slapadd -F /etc/openldap/slapd.d -l /opt/docker/organitzacio_edt.org.ldif
 RUN slapadd -F /etc/openldap/slapd.d -l /opt/docker/usuaris-edt.org.ldiff
 RUN chown -R ldap.ldap /etc/openldap/slapd.d/
