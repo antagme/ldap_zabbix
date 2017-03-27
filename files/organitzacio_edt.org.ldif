@@ -25,10 +25,12 @@ ou: productes
 description: Container per a productes linux
 objectclass: organizationalunit
 
+# hosts, inf, escoladeltreball.org
 dn: ou=hosts,dc=edt,dc=org
-ou: host
-description: Container per a hosts
-objectclass: organizationalunit
+objectClass: top
+objectClass: organizationalUnit
+ou: hosts
+description: Entrada que agrupa totes maquines del domini inf
 
 dn: ou=networks,dc=edt,dc=org
 ou: networks
