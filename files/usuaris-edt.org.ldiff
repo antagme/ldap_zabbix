@@ -259,4 +259,14 @@ gidNumber: 611
 homeDirectory: /var/tmp/home/2asix/user10
 userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
 
-
+# j01$, hosts, inf, escoladeltreball.org
+dn: uid=j01$,ou=hosts,dc=edt,dc=org
+objectClass: top
+objectClass: device
+objectClass: ipHost
+objectClass: ieee802Device
+cn: j01$
+uid: j01$
+ipHostNumber: 172.17.42.1
+macAddress: 02:42:3a:be:ac:52
+description: Ordinador aula N2J
