@@ -2,7 +2,7 @@ FROM fedora
 MAINTAINER "Pedro Romero Aguado" <pedroromeroaguado@gmail.com> 
 
 #installs
-RUN dnf install -y openldap openldap-servers openldap-clients
+RUN dnf install -y openldap openldap-servers openldap-clients krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap 
 # directoris
 RUN mkdir /opt/docker
 RUN mkdir /var/tmp/home
@@ -11,7 +11,8 @@ RUN mkdir /var/tmp/home/2asix
 #Copy github to dockerhub build
 COPY scripts /scripts/
 COPY files /opt/docker
-
+RUN cp /opt/docker/krb5.keytab /etc/
+RUN cp /usr/share/doc/krb5-server-ldap/kerberos.schema /etc/openldap/schema/
 #COPY configs /etc/
 #make executable and execute
 RUN /usr/bin/chmod +x /scripts/startup-slapd.sh & bash /scripts/startup-slapd.sh ; exit 0
