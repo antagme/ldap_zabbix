@@ -1,4 +1,4 @@
-FROM Fedora
+FROM fedora
 MAINTAINER "Pedro Romero Aguado" <pedroromeroaguado@gmail.com> 
 COPY scripts /scripts/
 
