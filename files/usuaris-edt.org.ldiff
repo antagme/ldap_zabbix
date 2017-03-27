@@ -260,7 +260,7 @@ homeDirectory: /var/tmp/home/2asix/user10
 userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
 
 # j01$, hosts, inf, escoladeltreball.org
-dn: uid=j01$,ou=hosts,dc=edt,dc=org
+dn: cn=j01$,ou=hosts,dc=edt,dc=org
 objectClass: top
 objectClass: device
 objectClass: ipHost
