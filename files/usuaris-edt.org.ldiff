@@ -99,7 +99,7 @@ gidNumber: 204
 homeDirectory: /var/tmp/home/admin
 userPassword: {SSHA}4mS0FycWc5bkpW8/a396SGNDTQUlFSX3
 
-dn: cn=user01,ou=usuaris,dc=edt,dc=org
+dn: uid=user01,ou=usuaris,dc=edt,dc=org
 objectclass: posixAccount
 objectclass: inetOrgPerson
 cn: user01
