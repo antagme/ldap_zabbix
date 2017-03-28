@@ -2,7 +2,7 @@ FROM fedora
 MAINTAINER "Pedro Romero Aguado" <pedroromeroaguado@gmail.com> 
 
 #installs
-RUN dnf install -y openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd 
+RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd 
 # directoris
 RUN mkdir /opt/docker
 RUN mkdir /var/tmp/home
@@ -15,13 +15,13 @@ RUN cp /opt/docker/ns* /etc/
 RUN cp -f /opt/docker/ldap.conf /etc/openldap/
 RUN cp -f /opt/docker/krb5.conf /etc/
 #Copying tls files for SASL
-RUN cp /opt/docker/cert.pem /etc/pki/tls/
-RUN cp /opt/docker/slapd.pem /etc/pki/tls/private/
-RUN cp /opt/docker/slapd.pemn /etc/pki/tls/certs/
+#RUN cp /opt/docker/cert.pem /etc/pki/tls/
+#RUN cp /opt/docker/slapd.pem /etc/pki/tls/private/
+#RUN cp /opt/docker/slapd.pemn /etc/pki/tls/certs/
 RUN cp /opt/docker/krb5.keytab /etc/
-RUN chmod 600 /etc/krb5.keytab
+RUN chmod 640 /etc/krb5.keytab
 RUN setfacl -m u:ldap:r /etc/krb5.keytab
-RUN setfacl -m u:ldap:r /etc/pki/tls/private/slapd.pem
+~RUN setfacl -m u:ldap:r /etc/pki/tls/private/slapd.pem
 RUN cp /usr/share/doc/krb5-server-ldap/kerberos.schema /etc/openldap/schema/
 #COPY configs /etc/
 #make executable and execute
