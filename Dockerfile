@@ -21,7 +21,7 @@ RUN cp -f /opt/docker/krb5.conf /etc/
 RUN cp /opt/docker/krb5.keytab /etc/
 RUN chmod 640 /etc/krb5.keytab
 RUN setfacl -m u:ldap:r /etc/krb5.keytab
-~RUN setfacl -m u:ldap:r /etc/pki/tls/private/slapd.pem
+#RUN setfacl -m u:ldap:r /etc/pki/tls/private/slapd.pem
 RUN cp /usr/share/doc/krb5-server-ldap/kerberos.schema /etc/openldap/schema/
 #COPY configs /etc/
 #make executable and execute
