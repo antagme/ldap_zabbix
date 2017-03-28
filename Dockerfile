@@ -14,10 +14,11 @@ COPY files /opt/docker
 RUN cp /opt/docker/ns* /etc/
 RUN cp -f /opt/docker/ldap.conf /etc/openldap/
 RUN cp -f /opt/docker/krb5.conf /etc/
-#Copying tls files for SASL
-#RUN cp /opt/docker/cert.pem /etc/pki/tls/
-#RUN cp /opt/docker/slapd.pem /etc/pki/tls/private/
-#RUN cp /opt/docker/slapd.pemn /etc/pki/tls/certs/
+#Copying tls files for SSL
+RUN cp /opt/docker/ca.crt /etc/openldap/certs/
+RUN cp /opt/docker/server.crt /etc/openldap/certs/
+RUN cp /opt/docker/server.key /etc/openldap/certs/
+
 RUN cp /opt/docker/krb5.keytab /etc/
 RUN chmod 640 /etc/krb5.keytab
 RUN setfacl -m u:ldap:r /etc/krb5.keytab
