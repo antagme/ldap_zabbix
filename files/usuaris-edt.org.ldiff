@@ -310,5 +310,4 @@ objectClass: person
 objectClass: organizationalPerson
 cn: replication
 sn: replication
-userPassword::e3NzaGF9V0xuYVpQaWRibENDU1hKYkpiVXVTSGhWb3hVRHFLZ09jT2RJSmc9P
-#replicationPASSWORD
+userPassword: {SSHA}5DfZc1WXeIwrP7C3fr23WLZiPZ5YHMgA
