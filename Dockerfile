@@ -18,8 +18,8 @@ RUN cp -f /opt/docker/krb5.conf /etc/
 RUN cp /opt/docker/ca_server.pem /etc/openldap/certs/
 RUN cp /opt/docker/ldap_server.pem /etc/openldap/certs/
 RUN cp /opt/docker/ldap_server.key /etc/openldap/certs/
-RUN chmod 640 /etc/openldap/certs/*
-RUN chown ldap.ldap /etc/openldap/certs/*
+RUN chmod 644 /etc/openldap/certs/*
+#RUN chown ldap.ldap /etc/openldap/certs/*
 RUN cp /opt/docker/krb5.keytab /etc/
 RUN chmod 640 /etc/krb5.keytab
 RUN setfacl -m u:ldap:r /etc/krb5.keytab
