@@ -304,7 +304,7 @@ ipHostNumber: 172.18.0.4
 macAddress: 00:00:00:00:00:00
 description: Servidor replica
 
-dn: cn=replication,dc=el01,dc=com
+dn: cn=replication,dc=edt,dc=org
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
