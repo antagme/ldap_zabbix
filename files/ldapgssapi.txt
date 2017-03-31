@@ -1,0 +1,29 @@
+SASL/GSSAPI authentication started
+SASL username: user01@EDT.ORG
+SASL SSF: 56
+SASL data security layer installed.
+# extended LDIF
+#
+# LDAPv3
+# base <dc=edt,dc=org> with scope subtree
+# filter: cn=pc1
+# requesting: ALL
+#
+
+# pc1, hosts, edt.org
+dn: cn=pc1,ou=hosts,dc=edt,dc=org
+objectClass: top
+objectClass: device
+objectClass: ipHost
+objectClass: ieee802Device
+cn: pc1
+ipHostNumber: 172.18.0.1
+macAddress: 02:42:3a:be:ac:52
+description: Ordinador aula
+
+# search result
+search: 4
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
