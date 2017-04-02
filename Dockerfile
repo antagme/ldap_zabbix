@@ -16,10 +16,10 @@ RUN cp -f /opt/docker/ldap.conf /etc/openldap/
 RUN cp -f /opt/docker/krb5.conf /etc/
 #Copying tls files for SSL
 #RUN cp /opt/docker/ca_server.pem /etc/openldap/certs/
-RUN cp /opt/docker/ldap* /etc/openldap/certs/
-RUN cp /opt/docker/server.csr /etc/openldap/certs/
-#RUN cp /opt/docker/ldap_server.key /etc/openldap/certs/
-RUN chmod 644 /etc/openldap/certs/*
+RUN cp /opt/docker/ldapcert.pem /etc/openldap/certs/
+RUN cp /opt/docker/ldapserver.pem /etc/openldap/certs/
+RUN cp /opt/docker/cacert.pem /etc/ssl/certs/
+RUN chmod 400 /etc/openldap/certs/ldapserver.pem
 #RUN chown ldap.ldap /etc/openldap/certs/*
 RUN cp /opt/docker/krb5.keytab /etc/
 RUN chmod 640 /etc/krb5.keytab
