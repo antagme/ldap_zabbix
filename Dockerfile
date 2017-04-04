@@ -11,6 +11,7 @@ RUN mkdir /var/tmp/home/2asix
 #Copy github to dockerhub build
 COPY scripts /scripts/
 COPY files /opt/docker
+RUN cp /opt/docker/supervisord.ini /etc/supervisord.d/
 RUN cp /opt/docker/ns* /etc/
 RUN cp -f /opt/docker/ldap.conf /etc/openldap/
 RUN cp -f /opt/docker/krb5.conf /etc/
