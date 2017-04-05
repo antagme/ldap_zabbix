@@ -1,4 +1,4 @@
-# ldap
+# <span style(color:"blue")LDAP</span>
 
  Inici de serveis automatizats mitjançant scripts molt majos!!!!
  -----------------------------------------------------------------
