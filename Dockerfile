@@ -1,5 +1,5 @@
 FROM fedora
-MAINTAINER "Pedro Romero Aguado" <pedroromeroaguado@gmail.com> 
+MAINTAINER "Antonia Aguado Mercado" <nomail@gmail.com> 
 
 #installs
 RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd nginx supervisor 
