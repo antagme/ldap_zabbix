@@ -311,3 +311,11 @@ objectClass: organizationalPerson
 cn: replication
 sn: replication
 userPassword: {SSHA}5DfZc1WXeIwrP7C3fr23WLZiPZ5YHMgA
+
+dn: cn=Monitoring,dc=edt,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+cn: Monitoring
+sn: Monitoring
+userPassword: {SHA}ovf8ta/reYP/u2zj0afpHt8yE1A=
