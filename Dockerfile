@@ -2,7 +2,7 @@ FROM fedora
 MAINTAINER "Antonia Aguado Mercado" <nomail@gmail.com> 
 
 #installs
-RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd nginx supervisor 
+RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cronie cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd nginx supervisor 
 # directoris
 RUN mkdir /opt/docker
 RUN mkdir /var/tmp/home
@@ -16,16 +16,13 @@ RUN cp /opt/docker/ns* /etc/
 RUN cp -f /opt/docker/ldap.conf /etc/openldap/
 RUN cp -f /opt/docker/krb5.conf /etc/
 #Copying tls files for SSL
-#RUN cp /opt/docker/ca_server.pem /etc/openldap/certs/
 RUN cp /opt/docker/ldapcert.pem /etc/openldap/certs/
 RUN cp /opt/docker/ldapserver.pem /etc/openldap/certs/
 RUN cp /opt/docker/cacert.pem /etc/ssl/certs/
 RUN chmod 400 /etc/openldap/certs/ldapserver.pem
-#RUN chown ldap.ldap /etc/openldap/certs/*
 RUN cp /opt/docker/krb5.keytab /etc/
 RUN chmod 640 /etc/krb5.keytab
 RUN setfacl -m u:ldap:r /etc/krb5.keytab
-#RUN setfacl -m u:ldap:r /etc/pki/tls/private/slapd.pem
 RUN cp /usr/share/doc/krb5-server-ldap/kerberos.schema /etc/openldap/schema/
 #COPY configs /etc/
 #make executable and execute
