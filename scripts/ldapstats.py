@@ -8,7 +8,7 @@ import logging
 import os.path
 import sys
 import argparse
-from ZabbixSender import ZabbixSender, ZabbixPacket
+#from ZabbixSender import ZabbixSender, ZabbixPacket
 
 DESCRIPTION="ldapstats.py collects values about statistics of traffic and operations of an openldap server and sends them to the specified zabbix server"
 #default parameters when executed without arguments
