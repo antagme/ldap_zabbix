@@ -1,5 +1,0 @@
-SASL/GSSAPI authentication started
-SASL username: user01@EDT.ORG
-SASL SSF: 56
-SASL data security layer installed.
-dn:cn=user01,ou=usuaris,dc=edt,dc=org
