@@ -2,7 +2,7 @@ FROM fedora
 MAINTAINER "Antonia Aguado Mercado" <nomail@gmail.com> 
 
 #installs
-RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd nginx supervisor cronie 
+RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd supervisor cronie zabbix-agent 
 # directoris
 RUN mkdir /opt/docker
 RUN mkdir /var/tmp/home
@@ -16,6 +16,7 @@ RUN cp /opt/docker/supervisord.ini /etc/supervisord.d/
 RUN cp /opt/docker/ns* /etc/
 RUN cp -f /opt/docker/ldap.conf /etc/openldap/
 RUN cp -f /opt/docker/krb5.conf /etc/
+RUN cp -f /opt/docker/zabbix_agentd.conf /etc/
 #Copying tls files for SSL
 RUN cp /opt/docker/ldapcert.pem /etc/openldap/certs/
 RUN cp /opt/docker/ldapserver.pem /etc/openldap/certs/
