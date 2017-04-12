@@ -304,6 +304,17 @@ ipHostNumber: 172.18.0.4
 macAddress: 00:00:00:00:00:00
 description: Servidor replica
 
+# Zabbix, hosts, edt.org
+dn: cn=zabbix.edt.org,ou=hosts,dc=edt,dc=org
+objectClass: top
+objectClass: device
+objectClass: ipHost
+objectClass: ieee802Device
+cn: zabbix.edt.org
+ipHostNumber: 172.18.0.10
+macAddress: 00:00:00:00:00:00
+description: Servidor Zabbix
+
 dn: cn=replication,dc=edt,dc=org
 objectClass: top
 objectClass: person
