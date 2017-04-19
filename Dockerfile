@@ -1,6 +1,5 @@
 FROM fedora
 MAINTAINER "Antonia Aguado Mercado" <nomail@gmail.com> 
-
 #installs
 RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd supervisor cronie zabbix-agent python-ldap
 # directoris
@@ -11,7 +10,9 @@ RUN mkdir /var/tmp/home/2asix
 #Copy github to dockerhub build
 COPY scripts /scripts/
 COPY files /opt/docker
+#Configure on the road the crontab
 RUN chmod +x /scripts/ldapstats.py & crontab -l | { cat; echo "* * * * * /scripts/ldapstats.py";} | crontab -
+#Copy configure scripts to the correspondent directory
 RUN cp /opt/docker/supervisord.ini /etc/supervisord.d/
 RUN cp /opt/docker/ns* /etc/
 RUN cp -f /opt/docker/ldap.conf /etc/openldap/
@@ -22,13 +23,15 @@ RUN cp /opt/docker/ldapcert.pem /etc/openldap/certs/
 RUN cp /opt/docker/ldapserver.pem /etc/openldap/certs/
 RUN cp /opt/docker/cacert.pem /etc/ssl/certs/
 RUN chmod 400 /etc/openldap/certs/ldapserver.pem
+#Copy Keytab and assign correctly permission and ACL
 RUN cp /opt/docker/krb5.keytab /etc/
 RUN chmod 640 /etc/krb5.keytab
 RUN setfacl -m u:ldap:r /etc/krb5.keytab
+#Copy kerberos Schema (ATM NOT RUNNING)
 RUN cp /usr/share/doc/krb5-server-ldap/kerberos.schema /etc/openldap/schema/
 #COPY configs /etc/
-#make executable and execute
+#make executable and execute the ldap database and populate
 RUN /usr/bin/chmod +x /scripts/startup-slapd.sh & bash /scripts/startup-slapd.sh ; exit 0
 #VOLUME ["/data"] 
 ENTRYPOINT ["/bin/bash","/scripts/entrypoint.sh"]
-EXPOSE 25 143 587 993 4190 8001 8002 
+EXPOSE 25 143 587 993 4190 8001  
