@@ -18,6 +18,7 @@ RUN cp /opt/docker/ns* /etc/
 RUN cp -f /opt/docker/ldap.conf /etc/openldap/
 RUN cp -f /opt/docker/krb5.conf /etc/
 RUN cp -f /opt/docker/zabbix_agentd.conf /etc/
+RUN cp -f /opt/docker/zabbix_agentd.psk /etc/zabbix/zabbix_agentd.psk
 #Copying tls files for SSL
 RUN cp /opt/docker/ldapcert.pem /etc/openldap/certs/
 RUN cp /opt/docker/ldapserver.pem /etc/openldap/certs/
