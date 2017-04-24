@@ -35,4 +35,4 @@ RUN cp /usr/share/doc/krb5-server-ldap/kerberos.schema /etc/openldap/schema/
 RUN /usr/bin/chmod +x /scripts/startup-slapd.sh & bash /scripts/startup-slapd.sh ; exit 0
 VOLUME [/var/lib/ldap] 
 ENTRYPOINT ["/usr/bin/supervisord -c "/etc/supervisord.d/supervisord.ini"]
-EXPOSE 25 143 587 993 4190 8001  
+EXPOSE 25 389 143 587 993 4190 8001  
