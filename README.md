@@ -1,10 +1,24 @@
-# Proyecto Final EDT | LDAP TLS SASL
+# Final Project EDT | LDAP TLS SASL
+_StartTLS Ldap Server_ with _GSSAPI AUTH_ and _Zabbix_ Monitoring to _LDAP Monitor DB_
 
-## En que consisteix el proyecte ?
+## Overview
+
+With different _Dockers_ construct an infraestructure for work in a real instance. Each _Docker_ have their own work.
+Also , when i was preparating my project , i decided to use a most secure auth than the simple one of _LDAP_ , so i decided  to implement _GSSAPI_ , the best one.
+
+## Description of the Project
 
 Partirem de la base que tothom te una base de [LDAP](https://es.wikipedia.org/wiki/OpenLDAP) , teorica o practica.
 El que he fet ha sigut crear una infraestructura real amb `dockers` del que podria ser una empresa o una escola.
 Tota la comunicacio de dades sensibles entre els dockers es fa mitjançant TLS.
+
+Tenim diversos Dockers , cadascun per una finalitat diferent:
+
+- Docker LDAP
+- Docker Kerberos
+- Docker Client (Simulating the School)
+- Docker LDAP Replica 
+- Docker Apache + Mysql + Zabbix
 
 La meva idea es tenir tots els dockers monitoritçats amb un servidor Zabbix central instalat a un docker httpd i agents zabbix a cada docker. En especial en el docker del servidor `LDAP` la meva intencio es fabricar uns scripts per redirigir dades de la `BBDD`
 Monitor i aixi veure-ls a la interficie grafica.
@@ -12,13 +26,15 @@ Monitor i aixi veure-ls a la interficie grafica.
 ### Tecnologies Emprades.
 
 1. Openldap
-  1. Amb Object Class:
+  1. Object Class used:
       * Per a Gestionar Users.
       * Per a Gestionar Grups.
-      * Per a fer de DNS.
-2. Docker
-3. Cyrus-sasl(Per a la auth de GSSAPI)
-    - Implementades Autentificacions SASL GSSAPI(Ticket) y SASL External(Certificat).
+      * Per a Gestionar Hosts.
+  2. AuthTypes Working:
+      * SASL GSSAPI(Kerberos Ticket Auth)
+      * SASL External(Certificate Auth)
+  3. StartTLS Security Transport Layer    
+2. Docker 
 4. Openssl
 5. Supervisord
 6. Nslcd
