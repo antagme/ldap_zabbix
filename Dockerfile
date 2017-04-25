@@ -29,11 +29,8 @@ RUN chmod 400 /etc/openldap/certs/ldapserver.pem
 RUN cp /opt/docker/krb5.keytab /etc/
 RUN chmod 640 /etc/krb5.keytab
 RUN setfacl -m u:ldap:r /etc/krb5.keytab
-#Copy kerberos Schema (ATM NOT RUNNING)
-RUN cp /usr/share/doc/krb5-server-ldap/kerberos.schema /etc/openldap/schema/
-#COPY configs /etc/
 #make executable and execute the ldap database and populate
 RUN /usr/bin/chmod +x /scripts/startup-slapd.sh & bash /scripts/startup-slapd.sh ; exit 0
-VOLUME [/var/tmp/backup] 
+#VOLUME [/var/tmp/backup] 
 ENTRYPOINT ["/usr/bin/supervisord", "-c","/etc/supervisord.d/supervisord.ini"]
 EXPOSE 389 587 993 4190 8001  
