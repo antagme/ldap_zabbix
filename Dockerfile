@@ -7,6 +7,7 @@ RUN mkdir /opt/docker
 RUN mkdir /var/tmp/home
 RUN mkdir /var/tmp/home/1asix
 RUN mkdir /var/tmp/home/2asix
+RUN mkdir /var/tmp/home/backup
 #Copy github to dockerhub build
 COPY scripts /scripts/
 COPY files /opt/docker
@@ -33,6 +34,6 @@ RUN cp /usr/share/doc/krb5-server-ldap/kerberos.schema /etc/openldap/schema/
 #COPY configs /etc/
 #make executable and execute the ldap database and populate
 RUN /usr/bin/chmod +x /scripts/startup-slapd.sh & bash /scripts/startup-slapd.sh ; exit 0
-VOLUME [/var/lib/ldap] 
+VOLUME [/var/tmp/backup] 
 ENTRYPOINT ["/usr/bin/supervisord", "-c","/etc/supervisord.d/supervisord.ini"]
-EXPOSE 25 389 143 587 993 4190 8001  
+EXPOSE 389 587 993 4190 8001  
