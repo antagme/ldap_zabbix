@@ -113,7 +113,6 @@ uid: user01
 uidNumber: 7001
 gidNumber: 610
 homeDirectory: /var/tmp/home/1asix/user01
-userPassword: {SASL}user01@EDT.ORG
 
 dn: cn=user02,ou=usuaris,dc=edt,dc=org
 objectclass: posixAccount
