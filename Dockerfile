@@ -1,7 +1,7 @@
 FROM fedora
 MAINTAINER "Antonia Aguado Mercado" <nomail@gmail.com> 
 #installs
-RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation krb5-server-ldap cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd supervisor cronie zabbix-agent python-ldap
+RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd supervisor cronie zabbix-agent python-ldap
 # directoris
 RUN mkdir /opt/docker
 RUN mkdir /var/tmp/home
