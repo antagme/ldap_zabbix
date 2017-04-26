@@ -1,10 +1,9 @@
 # Final Project EDT | LDAP TLS SASL
-_StartTLS Ldap Server_ with _GSSAPI AUTH_ and _Zabbix_ Monitoring to _LDAP Monitor DB_
+_Advanced Use of Dockerized Openldap Server and alternatives to secure your Openldap Server_
 
 ## Overview
 
-With different _Dockers Containers_ construct an infraestructure for work in a real instance. Each _Docker Container_ have their own work.
-Also , when i was preparating my project , i decided to use a most secure auth than the simple one of _LDAP_ , so i decided  to implement _GSSAPI_ , the best one.
+With different _Dockers Containers_ we gonna construct some examples around _LDAP SERVER container_.
 
 ## Description of the Project
 
@@ -12,13 +11,15 @@ Partirem de la base que tothom te una base de [LDAP](https://es.wikipedia.org/wi
 El que he fet ha sigut simular diferents casos reals amb _dockers Containers_ .
 Tota la comunicacio de dades sensibles entre els _Containers_ es fa mitjançant _TLS_.
 
-Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat diferent:
+Tenim aixi els seguents _Dockers Containers_ :
 
 - Docker LDAP
 - Docker Kerberos
 - Docker Client (Simulating a School Client)
 - Docker LDAP Replica 
 - Docker Apache + Mysql + Zabbix
+
+Each _Docker Container_ have their own work. Also , when i was preparating my project , i decided to use a most secure auth than the simple one of _LDAP_ , so i decided  to implement _GSSAPI_ , the best one.
 
 ### Tecnologies Emprades.
 
