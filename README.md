@@ -33,21 +33,21 @@ Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat difere
   3. StartTLS Security Transport Layer    
 2. Docker 
 3. Openssl ( To create Own Certificates for each service that need it)
-* Supervisord 
-  * To Manage the Processes inside the _Dockers Containers_ 
+4. Supervisord 
+  1. To Manage the Processes inside the _Dockers Containers_ 
 5. Nslcd 
-  ...- For retrieve Hosts Info 
+  1. For retrieve Hosts Info 
 6. Kerberos 
-  ...- For Obtain ticket
-  * Do _Kerberos Auth_ with _SSSD_ 
-  - _GSSAPI Auth_ with ldap clients.
+  1. For Obtain ticket
+  2. Do _Kerberos Auth_ with _SSSD_ 
+  3. _GSSAPI Auth_ with ldap clients.
 7. PAM
-  - For the propertly _System-Auth_ With _Kerberos_ + _LDAP_
+  1. For the propertly _System-Auth_ With _Kerberos_ + _LDAP_
 8. Zabbix Agentd y Zabbix Server
-  - For Monitoring each _Docker Container_
-  - For Monitoring  _LDAP Monitor Database_ with a _Python Script_.
+  1. For Monitoring each _Docker Container_
+  2. For Monitoring  _LDAP Monitor Database_ with a _Python Script_.
 9. Crond
-  - For Automated execution of the _Python Script_ for _LDAP Monitor Database_ each minute.
+  1. For Automated execution of the _Python Script_ for _LDAP Monitor Database_ each minute.
 10. Replication Consumer LDAP with StartTLS Communication And SASL GSSAPI.
 
 ### Per arrencar els dockers
