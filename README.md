@@ -24,9 +24,9 @@ Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat difere
 
 1. Openldap
   1. Object Class used:
-      - To Retrieve Users.
-      - To Retrieve Grups.
-      - To Retrieve Hosts.
+      * To Retrieve Users.
+      * To Retrieve Grups.
+      * To Retrieve Hosts.
   2. AuthTypes Working:
       - SASL GSSAPI(Kerberos Ticket Auth)
       - SASL External(Certificate Auth)
@@ -34,12 +34,12 @@ Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat difere
 2. Docker 
 3. Openssl ( To create Own Certificates for each service that need it)
 4. Supervisord 
-  - To Manage the Processes inside the _Dockers Containers_ 
+  * To Manage the Processes inside the _Dockers Containers_ 
 5. Nslcd 
-  - For retrieve Hosts Info 
+  * For retrieve Hosts Info 
 6. Kerberos 
-  - For Obtain ticket
-  - Do _Kerberos Auth_ with _SSSD_ 
+  * For Obtain ticket
+  * Do _Kerberos Auth_ with _SSSD_ 
   - _GSSAPI Auth_ with ldap clients.
 7. PAM
   - For the propertly _System-Auth_ With _Kerberos_ + _LDAP_
