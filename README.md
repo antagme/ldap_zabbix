@@ -61,16 +61,29 @@ In the default Bridge Network , we can't assign ips for containers_
  ```
 #### Arrencar Docker LDAP! 
  ```bash
- # docker run --net test --ip 172.178.0.2 -h ldap.edt.org --name ldap -it antagme/ldap_supervisor:latest
+ # docker run --net test --ip 172.178.0.2 -h ldap.edt.org --name ldap -it antagme/ldap_supervisor:zabbix_pam_tls
  ```  
+
 #### Arrencar Docker Kerberos (TGT)  
  ```bash
- # docker run --net test --ip 172.178.0.3 -h kserver.edt.org --name ldap -it antagme/kerberos:latest
+ # docker run --net test --ip 172.178.0.3 -h kserver.edt.org --name kerberos -it antagme/kerberos:supervisord
  ```
+ 
+#### Arrencar Docker Client (PAM for Authconfig with LDAP+Kerberos)  
+ ```bash
+ # docker run --net test --ip 172.178.0.8 -h client.edt.org --name client -it antagme/client:pam_tls
+ ```
+ 
+#### Arrencar Docker Client (PAM for Authconfig with LDAP+Kerberos)  
+ ```bash
+ # docker run --net test --ip 172.178.0.10 -h zabbix.edt.org --name zabbix -it antagme/httpd:zabbix
+ ```
+
 #### Arrencar Docker LDAP REPLICA
  ```bash
  # docker run --net test --ip 172.178.0.4 -h ldaprepl.edt.org --name replica -it antagme/ldap_replica:latest
  ```
+ 
 #### Nota important.
 _Es Molt important seguir l'ordre per rebre correctament les dades del DNS , encara que si falles, nomes hauria que reiniciarse el Daemon NSLCD al docker que falla_
 
