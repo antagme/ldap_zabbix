@@ -7,11 +7,12 @@ With different _Dockers Containers_ we gonna construct some examples around _LDA
 
 ## Description of the Project
 
-Partirem de la base que tothom te una base de [LDAP](https://es.wikipedia.org/wiki/OpenLDAP) , teorica o practica.
+Let's assume you all have some idea [LDAP](https://es.wikipedia.org/wiki/OpenLDAP), theorical or practical.
+So i will
 El que he fet ha sigut simular diferents casos reals amb _dockers Containers_ .
 Tota la comunicacio de dades sensibles entre els _Containers_ es fa mitjançant _TLS_.
 
-Tenim aixi els seguents _Dockers Containers_ :
+So we have the next _Dockers Containers_ :
 
 - Docker LDAP
 - Docker Kerberos
@@ -21,7 +22,7 @@ Tenim aixi els seguents _Dockers Containers_ :
 
 Each _Docker Container_ have their own work. Also , when i was preparating my project , i decided to use a most secure auth than the simple one of _LDAP_ , so i decided  to implement _GSSAPI_ , the best one.
 
-### Tecnologies Emprades.
+### Used Technologies.
 
 * Openldap
   * Object Class used:
@@ -59,31 +60,31 @@ In the default Bridge Network , we can't assign ips for containers_
  ```bash
  # docker network create --subnet 172.18.0.0/16 -d bridge test
  ```
-#### Arrencar Docker LDAP! 
+#### Run Docker LDAP! 
  ```bash
  # docker run --net test --ip 172.178.0.2 -h ldap.edt.org --name ldap -it antagme/ldap_supervisor:zabbix_pam_tls
  ```  
 
-#### Arrencar Docker Kerberos (TGT)  
+#### Run Docker Kerberos (TGT)  
  ```bash
  # docker run --net test --ip 172.178.0.3 -h kserver.edt.org --name kerberos -it antagme/kerberos:supervisord
  ```
  
-#### Arrencar Docker Client (PAM for Authconfig with LDAP+Kerberos)  
+#### Run Docker Client (PAM for Authconfig with LDAP+Kerberos)  
  ```bash
  # docker run --net test --ip 172.178.0.8 -h client.edt.org --name client -it antagme/client:pam_tls
  ```
  
-#### Arrencar Docker Client (PAM for Authconfig with LDAP+Kerberos)  
- ```bash
- # docker run --net test --ip 172.178.0.10 -h zabbix.edt.org --name zabbix -it antagme/httpd:zabbix
- ```
-
-#### Arrencar Docker LDAP REPLICA
+#### Run Docker LDAP REPLICA
  ```bash
  # docker run --net test --ip 172.178.0.4 -h ldaprepl.edt.org --name replica -it antagme/ldap_replica:latest
  ```
  
+#### Run Docker Zabbix (Apache + Zabbix Monitoring each Container + Monitoring through Trapper LDAP MONITOR DB)  
+ ```bash
+ # docker run --net test --ip 172.178.0.10 -h zabbix.edt.org --name zabbix -it antagme/httpd:zabbix
+ ```
+
 #### Nota important.
 _Es Molt important seguir l'ordre per rebre correctament les dades del DNS , encara que si falles, nomes hauria que reiniciarse el Daemon NSLCD al docker que falla_
 
