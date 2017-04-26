@@ -3,45 +3,52 @@ _StartTLS Ldap Server_ with _GSSAPI AUTH_ and _Zabbix_ Monitoring to _LDAP Monit
 
 ## Overview
 
-With different _Dockers_ construct an infraestructure for work in a real instance. Each _Docker_ have their own work.
+With different _Dockers Containers_ construct an infraestructure for work in a real instance. Each _Docker Container_ have their own work.
 Also , when i was preparating my project , i decided to use a most secure auth than the simple one of _LDAP_ , so i decided  to implement _GSSAPI_ , the best one.
 
 ## Description of the Project
 
 Partirem de la base que tothom te una base de [LDAP](https://es.wikipedia.org/wiki/OpenLDAP) , teorica o practica.
-El que he fet ha sigut crear una infraestructura real amb `dockers` del que podria ser una empresa o una escola.
-Tota la comunicacio de dades sensibles entre els dockers es fa mitjançant TLS.
+El que he fet ha sigut simular diferents casos reals amb _dockers Containers_ .
+Tota la comunicacio de dades sensibles entre els _Containers_ es fa mitjançant _TLS_.
 
-Tenim diversos Dockers , cadascun per una finalitat diferent:
+Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat diferent:
 
 - Docker LDAP
 - Docker Kerberos
-- Docker Client (Simulating the School)
+- Docker Client (Simulating a School Client)
 - Docker LDAP Replica 
 - Docker Apache + Mysql + Zabbix
-
-La meva idea es tenir tots els dockers monitoritçats amb un servidor Zabbix central instalat a un docker httpd i agents zabbix a cada docker. En especial en el docker del servidor `LDAP` la meva intencio es fabricar uns scripts per redirigir dades de la `BBDD`
-Monitor i aixi veure-ls a la interficie grafica.
 
 ### Tecnologies Emprades.
 
 1. Openldap
   1. Object Class used:
-      * Per a Gestionar Users.
-      * Per a Gestionar Grups.
-      * Per a Gestionar Hosts.
+      - To Retrieve Users.
+      - To Retrieve Grups.
+      - To Retrieve Hosts.
   2. AuthTypes Working:
-      * SASL GSSAPI(Kerberos Ticket Auth)
-      * SASL External(Certificate Auth)
+      - SASL GSSAPI(Kerberos Ticket Auth)
+      - SASL External(Certificate Auth)
   3. StartTLS Security Transport Layer    
 2. Docker 
-4. Openssl
-5. Supervisord
-6. Nslcd
-7. Kerberos
-8. PAM
-9. Zabbix Agentd y Zabbix Server
-10. Replica LDAP mitjançant TLS y SASL GSSAPI.
+3. Openssl ( To create Own Certificates for each service that need it)
+4. Supervisord 
+  - To Manage the Processes inside the _Dockers Containers_ 
+5. Nslcd 
+  - For retrieve Hosts Info 
+6. Kerberos 
+  - For Obtain ticket
+  - Do _Kerberos Auth_ with _SSSD_ 
+  - _GSSAPI Auth_ with ldap clients.
+7. PAM
+  - For the propertly _System-Auth_ With _Kerberos_ + _LDAP_
+8. Zabbix Agentd y Zabbix Server
+  - For Monitoring each _Docker Container_
+  - For Monitoring  _LDAP Monitor Database_ with a _Python Script_.
+9. Crond
+  - For Automated execution of the _Python Script_ for _LDAP Monitor Database_ each minute.
+10. Replication Consumer LDAP with StartTLS Communication And SASL GSSAPI.
 
 ### Per arrencar els dockers
 #### Crear Network primer
@@ -78,3 +85,6 @@ _Es Molt important seguir l'ordre per rebre correctament les dades del DNS , enc
 - |Serveis instalats: Slapd , nslcd , nginx|
 - |Clients Agafen tickets d'un docker kerberos per auth|
 - | LDAP fa de dns als ordinadors de la xarxa |
+
+La meva idea es tenir tots els dockers monitoritçats amb un servidor Zabbix central instalat a un docker httpd i agents zabbix a cada docker. En especial en el docker del servidor `LDAP` la meva intencio es fabricar uns scripts per redirigir dades de la `BBDD`
+Monitor i aixi veure-ls a la interficie grafica.
