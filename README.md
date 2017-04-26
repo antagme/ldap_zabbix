@@ -30,7 +30,8 @@ Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat difere
   * AuthTypes Working:
      * SASL GSSAPI(Kerberos Ticket Auth)
      * SASL External(Certificate Auth)
-  * StartTLS Security Transport Layer    
+  * StartTLS Security Transport Layer
+  * Replication Consumer LDAP with StartTLS Communication And SASL GSSAPI.
 * Docker 
 * Openssl ( To create Own Certificates for each service that need it)
 * Supervisord 
@@ -48,11 +49,12 @@ Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat difere
   * For Monitoring  _LDAP Monitor Database_ with a _Python Script_.
 * Crond
   * For Automated execution of the _Python Script_ for _LDAP Monitor Database_ each minute.
-* Replication Consumer LDAP with StartTLS Communication And SASL GSSAPI.
 
-### Per arrencar els dockers
-#### Crear Network primer
-_Aixo te un motiu, volem que sempre s'arrenquin amb la mateixa Ip per que quan faci DNS LDAP , concideixin les ips._
+### To Start Docker Containers
+#### Create Docker Network 
+_This is for a very important reason, we need to always have the same container IP for the proper Ip distribution through LDAP and NSLCD.
+In the default Bridge Network , we can't assign ips for containers_
+
  ```bash
  # docker network create --subnet 172.18.0.0/16 -d bridge test
  ```
