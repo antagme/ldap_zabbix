@@ -8,6 +8,7 @@ With different _Dockers Containers_ we gonna construct some examples around _LDA
 ## Description of the Project
 
 Let's assume you all have some idea about [LDAP](https://es.wikipedia.org/wiki/OpenLDAP), theorical or practical.
+
 In this project we are going to study different examples based on the Openldap service through docker container.
 
 Tota la comunicacio de dades sensibles entre els _Containers_ es fa mitjançant _TLS_.
