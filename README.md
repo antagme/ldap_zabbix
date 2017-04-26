@@ -34,11 +34,11 @@ Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat difere
 2. Docker 
 3. Openssl ( To create Own Certificates for each service that need it)
 4. Supervisord 
-  -  To Manage the Processes inside the _Dockers Containers_ 
+..* To Manage the Processes inside the _Dockers Containers_ 
 5. Nslcd 
-  * For retrieve Hosts Info 
+  ...- For retrieve Hosts Info 
 6. Kerberos 
-  * For Obtain ticket
+  ...- For Obtain ticket
   * Do _Kerberos Auth_ with _SSSD_ 
   - _GSSAPI Auth_ with ldap clients.
 7. PAM
