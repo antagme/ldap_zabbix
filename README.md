@@ -62,7 +62,9 @@ _Docker Images_ used for this example:
 - Client for do some searchs and see the graphs
 - Zabbix with Openldap Custom Template
 
-#### Summary of the examples
+## Summary
+
+### Summary of the examples
 
 So we have the next _Dockers Images_ , each with differents configurations:
 
