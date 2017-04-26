@@ -10,10 +10,17 @@ With different _Dockers Containers_ we gonna construct some examples around _LDA
 Let's assume you all have some idea about [LDAP](https://es.wikipedia.org/wiki/OpenLDAP), theorical or practical.
 
 In this project we are going to study different examples based on the Openldap service through docker container.
+In particular, I have chosen 4 examples in which we can see technologies that although very different, can be used to improve our ldap server.
 
-Tota la comunicacio de dades sensibles entre els _Containers_ es fa mitjançant _TLS_.
+### The Examples
 
-So we have the next _Dockers Containers_ :
+#### StartTLS LDAP Server With SASL GSSAPI Auth.
+
+In this model, we will perform a _GSSAPI Authentication_ using the Openldap client utilities. For this we will use a total of 3 Docker Containers.
+All communication between the client and the _LDAP SERVER_ is encrypted using the TLS protocol, using port 389, the default for unencrypted communications, but thanks to StartTLS, we can use it for secure communications
+
+
+So we have the next _Dockers Images_ , each with differents configurations:
 
 - Docker LDAP
 - Docker Kerberos
