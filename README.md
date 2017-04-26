@@ -62,7 +62,7 @@ _Docker Images_ used for this example:
 - Client for do some searchs and see the graphs
 - Zabbix with Openldap Custom Template
 
-### Summary of the examples
+#### Summary of the examples
 
 So we have the next _Dockers Images_ , each with differents configurations:
 
@@ -72,9 +72,9 @@ So we have the next _Dockers Images_ , each with differents configurations:
 - Docker LDAP Replica 
 - Docker Apache + Mysql + Zabbix
 
-Each _Docker Container_ have their own work. Also , when i was preparating my project , i decided to use a most secure auth than the simple one of _LDAP_ , so i decided  to implement _GSSAPI_ , the best one.
+**Note** _: Each Docker Container have their own work. Also , when i was preparating my project , i decided to use a most secure auth than the simple one of LDAP , so i decided  to implement GSSAPI , the best one for this environment , but u have another options. See ([Auth Types](http://www.openldap.org/doc/admin24/security.html#Authentication%20Methods)) for more information_
 
-### Used Technologies.
+### Summary of Used Technologies.
 
 * Openldap
   * Object Class used:
@@ -155,5 +155,4 @@ _Es Molt important seguir l'ordre per rebre correctament les dades del DNS , enc
 - |Clients Agafen tickets d'un docker kerberos per auth|
 - | LDAP fa de dns als ordinadors de la xarxa |
 
-La meva idea es tenir tots els dockers monitoritçats amb un servidor Zabbix central instalat a un docker httpd i agents zabbix a cada docker. En especial en el docker del servidor `LDAP` la meva intencio es fabricar uns scripts per redirigir dades de la `BBDD`
-Monitor i aixi veure-ls a la interficie grafica.
+
