@@ -22,34 +22,33 @@ Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat difere
 
 ### Tecnologies Emprades.
 
-1. Openldap
-  1. Object Class used:
+* Openldap
+  * Object Class used:
       * To Retrieve Users.
       * To Retrieve Grups.
       * To Retrieve Hosts.
-  2. AuthTypes Working:
-      - SASL GSSAPI(Kerberos Ticket Auth)
-      - SASL External(Certificate Auth)
-  3. StartTLS Security Transport Layer    
-2. Docker 
-3. Openssl ( To create Own Certificates for each service that need it)
-4. Supervisord 
-    - To Manage the Processes inside the _Dockers Containers_ 
-5. Nslcd 
-    - For retrieve Hosts Info 
-  
-6. Kerberos 
-  - For Obtain ticket
-  - Do _Kerberos Auth_ with _SSSD_ 
-  - _GSSAPI Auth_ with ldap clients.
-7. PAM
-  1. For the propertly _System-Auth_ With _Kerberos_ + _LDAP_
-8. Zabbix Agentd y Zabbix Server
-  1. For Monitoring each _Docker Container_
-  2. For Monitoring  _LDAP Monitor Database_ with a _Python Script_.
-9. Crond
-  1. For Automated execution of the _Python Script_ for _LDAP Monitor Database_ each minute.
-10. Replication Consumer LDAP with StartTLS Communication And SASL GSSAPI.
+  * AuthTypes Working:
+     * SASL GSSAPI(Kerberos Ticket Auth)
+     * SASL External(Certificate Auth)
+  * StartTLS Security Transport Layer    
+* Docker 
+* Openssl ( To create Own Certificates for each service that need it)
+* Supervisord 
+    * To Manage the Processes inside the _Dockers Containers_ 
+* Nslcd 
+    * For retrieve Hosts Info 
+* Kerberos 
+  * For Obtain ticket
+  * Do _Kerberos Auth_ with _SSSD_ 
+  * _GSSAPI Auth_ with ldap clients.
+* PAM
+  * For the propertly _System-Auth_ With _Kerberos_ + _LDAP_
+* Zabbix Agentd y Zabbix Server
+  * For Monitoring each _Docker Container_
+  * For Monitoring  _LDAP Monitor Database_ with a _Python Script_.
+* Crond
+  * For Automated execution of the _Python Script_ for _LDAP Monitor Database_ each minute.
+* Replication Consumer LDAP with StartTLS Communication And SASL GSSAPI.
 
 ### Per arrencar els dockers
 #### Crear Network primer
