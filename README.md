@@ -36,11 +36,12 @@ Tenim aixi els seguents _Dockers Containers_ , cadascun per una finalitat difere
 4. Supervisord 
   1. To Manage the Processes inside the _Dockers Containers_ 
 5. Nslcd 
-  1. For retrieve Hosts Info 
+  - For retrieve Hosts Info 
+  
 6. Kerberos 
-  1. For Obtain ticket
-  2. Do _Kerberos Auth_ with _SSSD_ 
-  3. _GSSAPI Auth_ with ldap clients.
+  - For Obtain ticket
+  - Do _Kerberos Auth_ with _SSSD_ 
+  - _GSSAPI Auth_ with ldap clients.
 7. PAM
   1. For the propertly _System-Auth_ With _Kerberos_ + _LDAP_
 8. Zabbix Agentd y Zabbix Server
