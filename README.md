@@ -41,6 +41,27 @@ _Docker Images_ used for this example:
 - Ldap StartTLS Consumer with Simple Authentication
 - Ldap StartTLS Consumer with SASL GSSAPI Authentication
 
+### Client with PAM + SSSD for Kerberos Auth , LDAP user information and Kerberos Password.
+
+In this model, starting from example one, we will see how to make a more secure authentication in the system using the best of Kerberos and Ldap technologies.
+
+For this example, in the Client we will see how the System-Auth works with these two technologies, and we will perform a series of checks to make sure it works correctly.
+
+_Docker Images_ used for this example:
+- Ldap StartTLS + GSSAPI Keytab 
+- Kerberos
+- Client PAM + ldapwhoami
+
+### Zabbix Monitoring to Monitor Database from Openldap Server.
+
+Finally, in this model, we will see in a Zabbix server how to have monitored by graphs, all the operations that are done in our LDAP Server and all connections to it.
+
+_Docker Images_ used for this example:
+- Ldap StartTLS with Crond Python Script
+- Kerberos
+- Client for do some searchs and see the graphs
+- Zabbix with Openldap Custom Template
+
 ### Summary of the examples
 
 So we have the next _Dockers Images_ , each with differents configurations:
