@@ -160,3 +160,6 @@ _Es Molt important seguir l'ordre per rebre correctament les dades del DNS , enc
 - | LDAP fa de dns als ordinadors de la xarxa |
 
 
+## Appendix
+
+- All the entries used in Ldap Database has been created on the M06 Subject in [Escola del Treball](https://www.escoladeltreball.org) School
