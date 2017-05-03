@@ -118,27 +118,27 @@ In the default Bridge Network , we can't assign ips for containers_
  ```
 #### Run Docker LDAP! 
  ```bash
- # docker run --net test --ip 172.178.0.2 -h ldap.edt.org --name ldap -it antagme/ldap_supervisor:zabbix_pam_tls
+ # docker run --net test --ip 172.18.0.2 -h ldap.edt.org --name ldap -it antagme/ldap_supervisor:zabbix_pam_tls
  ```  
 
 #### Run Docker Kerberos (TGT)  
  ```bash
- # docker run --net test --ip 172.178.0.3 -h kserver.edt.org --name kerberos -it antagme/kerberos:supervisord
+ # docker run --net test --ip 172.18.0.3 -h kserver.edt.org --name kerberos -it antagme/kerberos:supervisord
  ```
  
 #### Run Docker Client (PAM for Authconfig with LDAP+Kerberos)  
  ```bash
- # docker run --net test --ip 172.178.0.8 -h client.edt.org --name client -it antagme/client:pam_tls
+ # docker run --net test --ip 172.18.0.8 -h client.edt.org --name client -it antagme/client:pam_tls
  ```
  
 #### Run Docker LDAP REPLICA
  ```bash
- # docker run --net test --ip 172.178.0.4 -h ldaprepl.edt.org --name replica -it antagme/ldap_replica:latest
+ # docker run --net test --ip 172.18.0.4 -h ldaprepl.edt.org --name replica -it antagme/ldap_replica:latest
  ```
  
 #### Run Docker Zabbix (Apache + Zabbix Monitoring each Container + Monitoring through Trapper LDAP MONITOR DB)  
  ```bash
- # docker run --net test --ip 172.178.0.10 -h zabbix.edt.org --name zabbix -it antagme/httpd:zabbix
+ # docker run --net test --ip 172.18.0.10 -h zabbix.edt.org --name zabbix -it antagme/httpd:zabbix
  ```
 
 #### Nota important.
