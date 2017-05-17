@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+# Script for send to Zabbix Trapper LDAP Monitor Database information
+# This Script was download from https://github.com/bergzand/zabbix-ldap-ops/blob/master/ldapstats.py and modified for own use.
+# Need template in Zabbix for take information.
 import time
 import ldap
 import json
@@ -8,7 +11,6 @@ import logging
 import os.path
 import sys
 import argparse
-#from ZabbixSender import ZabbixSender, ZabbixPacket
 
 DESCRIPTION="ldapstats.py collects values about statistics of traffic and operations of an openldap server and sends them to the specified zabbix server"
 #default parameters when executed without arguments
@@ -77,17 +79,6 @@ def ParseToLib(host,key,statistics, operations):
             zabbixData['data'].append(item)
     return zabbixData
 
-#need to add arguments for:
-# zabbix server
-# zabbix port
-# zabbix key
-# zabbix hostname
-# 
-# ldapuri
-# binddn
-# bindpw
-# monitordb
-
 def argParse():
     parser = argparse.ArgumentParser(description=DESCRIPTION, formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('-z','--zabbixserver',default=ZABBIXSERVER, help='zabbix server to send values to')
@@ -141,16 +132,6 @@ finally:
 
 if exitstatus == 0:
     data = ParseToLib(args['zabbixhost'],args['zabbixkey'],statistics, operations)
-    #initial zabbixData objectii
-  #  server = ZabbixSender(ZABBIXSERVER,ZABBIXPORT)
-   # packet = ZabbixPacket()
-  #  proba=data['data']
-   # for element in proba:
-#	print element['key'],element['value']
- #       packet.add(ZABBIXHOST,element['key'],element['value'])
-   # print packet
-    #server.send(packet)
-    #print(server.status)
     sendtozabbix(args['zabbixserver'],args['zabbixport'],json.dumps(data))
 
 #print the value for zabbix
