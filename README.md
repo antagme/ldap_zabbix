@@ -14,19 +14,19 @@ In particular, I have chosen 4 examples in which we can see technologies that al
 
 ## The Examples
 
-### StartTLS LDAP Server With SASL GSSAPI Auth.
+### Example 1 - StartTLS LDAP Server With SASL GSSAPI Auth
 
 In this model, we will perform a _GSSAPI Authentication_ using the Openldap client utilities. For this we will use a total of 3 _Docker Containers_.
 All communication between the client and the _LDAP SERVER_ is encrypted using the _TLS_ protocol, using port 389, the default for unencrypted communications, but thanks to _StartTLS_, we can use it for secure communications
 
 _Docker Images_ used for this example:
-- [Ldap StartTLS + GSSAPI Keytab](https://hub.docker.com/r/antagme/ldap_gssapi/) 
-- [Kerberos](https://hub.docker.com/r/antagme/kerberos/)
-- [Client for try some consults to Database](https://hub.docker.com/r/antagme/client_gssapi/)
+- Ldap StartTLS + GSSAPI Keytab [DockerHub](https://hub.docker.com/r/antagme/ldap_gssapi/) [GitHub](https://github.com/antagme/ldap_gssapi)
+- Kerberos [DockerHub](https://hub.docker.com/r/antagme/kerberos/) [Github](https://github.com/antagme/kerberos)
+- Client for try some consults to Database [DockerHub](https://hub.docker.com/r/antagme/client_gssapi/) [Github](https://github.com/antagme/client_gssapi)
 
-[Click Here for more information about this model...](https://github.com/antagme/Documentation_Project/blob/master/example1.md)
+[For more information about this model...](https://github.com/antagme/Documentation_Project/blob/master/example1.md)
 
-### StartTLS LDAP Producer Server Replicating without SASL GSSAPI Auth and with it.
+### Example 2 -StartTLS LDAP Producer Server Replicating without SASL GSSAPI Auth and with it
 
 In this model, we will see how an _LDAP Server_ works as _Producer_ so that other _LDAP servers_ can replicate and act as Consumer.
 
@@ -37,32 +37,38 @@ On the other hand we will make another _Consumer_ do the same but through _SASL 
 Finally we will verify that the **Client** can perform searches in both servers, and we will make modifications in the database of the _Producer_ and we will verify if it is really producing a correct replication.
 
 _Docker Images_ used for this example:
-- Ldap StartTLS Producer + GSSAPI Keytab 
-- Kerberos
-- Client for try some consults to Database
-- Ldap StartTLS Consumer with Simple Authentication
-- Ldap StartTLS Consumer with SASL GSSAPI Authentication
+- Ldap StartTLS Producer + GSSAPI Keytab [DockerHub](https://hub.docker.com/r/antagme/ldap_producer/) [GitHub](https://github.com/antagme/ldap_producer)
+- Kerberos [DockerHub](https://hub.docker.com/r/antagme/kerberos/) [Github](https://github.com/antagme/kerberos)
+- Client for try some consults to Database [DockerHub](https://hub.docker.com/r/antagme/client_gssapi/) [Github](https://github.com/antagme/client_gssapi)
+- Ldap StartTLS Consumer with Simple Authentication [DockerHub](https://hub.docker.com/r/antagme/ldap_replica_simple/) [GitHub](https://github.com/antagme/ldap_replica_simple)
+- Ldap StartTLS Consumer with SASL GSSAPI Authentication [DockerHub](https://hub.docker.com/r/antagme/ldap_replica_gssapi/) [GitHub](https://github.com/antagme/ldap_replica_gssapi)
 
-### Client with PAM + SSSD for Kerberos Auth , LDAP user information and Kerberos Password.
+[For more information about this model...](https://github.com/antagme/Documentation_Project/blob/master/example2.md)
+
+### Example 3 - Client with PAM + SSSD for Kerberos Auth , LDAP user information and Kerberos Password
 
 In this model, starting from example one, we will see how to make a more secure authentication in the system using the best of Kerberos and Ldap technologies.
 
 For this example, in the Client we will see how the System-Auth works with these two technologies, and we will perform a series of checks to make sure it works correctly.
 
 _Docker Images_ used for this example:
-- Ldap StartTLS + GSSAPI Keytab 
-- Kerberos
-- Client PAM + ldapwhoami
+- Ldap StartTLS + GSSAPI Keytab [DockerHub](https://hub.docker.com/r/antagme/ldap_sssd) [GitHub](https://github.com/antagme/ldap_sssd)
+- Kerberos [DockerHub](https://hub.docker.com/r/antagme/kerberos/) [Github](https://github.com/antagme/kerberos)
+- Client PAM + ldapwhoami [DockerHub](https://hub.docker.com/r/antagme/client/) [Github](https://github.com/antagme/client)
 
-### Zabbix Monitoring to Monitor Database from Openldap Server.
+[For more information about this model...](https://github.com/antagme/Documentation_Project/blob/master/example3.md)
+
+### Example 4 - Zabbix Monitoring to Monitor Database from Openldap Server
 
 Finally, in this model, we will see in a Zabbix server how to have monitored by graphs, all the operations that are done in our LDAP Server and all connections to it.
 
 _Docker Images_ used for this example:
-- Ldap StartTLS with Crond Python Script
-- Kerberos
-- Client for do some searchs and see the graphs
-- Zabbix with Openldap Custom Template
+- Ldap StartTLS with Crond Python Script [DockerHub](https://hub.docker.com/r/antagme/ldap_zabbix) [Github](https://github.com/antagme/ldap_zabbix)
+- Kerberos [DockerHub](https://hub.docker.com/r/antagme/kerberos/) [Github](https://github.com/antagme/kerberos)
+- Client for do some searchs and see the graphs [DockerHub](https://hub.docker.com/r/antagme/client_gssapi/) [Github](https://github.com/antagme/client_gssapi)
+- Zabbix with Openldap Custom Template [DockerHub](https://hub.docker.com/r/antagme/httpd/) [Github](https://github.com/antagme/httpd)
+
+[For more information about this model...](https://github.com/antagme/Documentation_Project/blob/master/example4.md)
 
 ## Summary
 
@@ -78,87 +84,34 @@ So we have the next _Dockers Images_ , each with differents configurations:
 
 **Note** _: Each Docker Container have their own work. Also , when i was preparating my project , i decided to use a most secure auth than the simple one of LDAP , so i decided  to implement GSSAPI , the best one for this environment , but u have another options. See ([Auth Types](http://www.openldap.org/doc/admin24/security.html#Authentication%20Methods)) for more information_
 
-### Summary of Used Technologies.
+### Summary of Used Technologies
 
-* Openldap
+* [Openldap](https://www.openldap.org/)
   * Object Class used:
       * To Retrieve Users.
       * To Retrieve Grups.
       * To Retrieve Hosts.
-  * AuthTypes Working:
-     * SASL GSSAPI(Kerberos Ticket Auth)
-     * SASL External(Certificate Auth)
-  * StartTLS Security Transport Layer
-  * Replication Consumer LDAP with StartTLS Communication And SASL GSSAPI.
-* Docker 
-* Openssl ( To create Own Certificates for each service that need it)
-* Supervisord 
-    * To Manage the Processes inside the _Dockers Containers_ 
-* Nslcd 
-    * For retrieve Hosts Info 
-* Kerberos 
-  * For Obtain ticket
-  * Do _Kerberos Auth_ with _SSSD_ 
-  * _GSSAPI Auth_ with ldap clients.
-* PAM
-  * For the propertly _System-Auth_ With _Kerberos_ + _LDAP_
-* Zabbix Agentd y Zabbix Server
-  * For Monitoring each _Docker Container_
-  * For Monitoring  _LDAP Monitor Database_ with a _Python Script_.
+  * [AuthTypes Working:](https://www.openldap.org/doc/admin24/sasl.html)
+     * [SASL GSSAPI(Kerberos Ticket Auth)](https://github.com/antagme/Documentation_Project/blob/master/example1.md#configure)
+  * [StartTLS Security Transport Layer](https://www.openldap.org/doc/admin24/tls.html)
+  * [Replication Consumer LDAP with StartTLS Communication And SASL GSSAPI](https://github.com/antagme/Documentation_Project/blob/master/example2.md).
+* [Docker](https://docs.docker.com/)
+* [Openssl](https://www.openssl.org/) [To create Own Certificates for each service that need it](https://github.com/antagme/Documentation_Project/blob/master/CertificatesLDAP.md)
+* [Supervisord](http://supervisord.org/)
+    * [To Manage the Processes inside the _Dockers Containers_ ](https://github.com/antagme/Documentation_Project/blob/master/HowToSupervisor.md)
+* [Nslcd](https://arthurdejong.org/nss-pam-ldapd/)
+    * [For retrieve Hosts Info](https://github.com/antagme/Documentation_Project/blob/master/HowToConfigureNslcdAndNssSwitch.md)
+* [Kerberos](https://web.mit.edu/kerberos/)
+  * [Do _Kerberos Auth_ with _SSSD_](https://github.com/antagme/Documentation_Project/blob/master/example3.md)
+  * [_GSSAPI Auth_ with ldap clients](https://github.com/antagme/Documentation_Project/blob/master/example1.md#configure)
+* [PAM](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/Pluggable_Authentication_Modules.html)
+  * [For the propertly _System-Auth_ With _Kerberos_ + _LDAP_](https://github.com/antagme/Documentation_Project/blob/master/example3.md)
+* [Zabbix Agentd y Zabbix Server](http://www.zabbix.com/)
+  * [For Monitoring  _LDAP Monitor Database_ with a _Python Script_](https://github.com/antagme/Documentation_Project/blob/master/example4.md)
 * Crond
-  * For Automated execution of the _Python Script_ for _LDAP Monitor Database_ each minute.
+  * [For Automated execution of the _Python Script_ for _LDAP Monitor Database_ each minute](https://github.com/antagme/Documentation_Project/blob/master/example4.md)
 
-### To Start Docker Containers
-#### Create Docker Network 
-_This is for a very important reason, we need to always have the same container IP for the proper Ip distribution through LDAP and NSLCD.
-In the default Bridge Network , we can't assign ips for containers_
-
- ```bash
- # docker network create --subnet 172.18.0.0/16 -d bridge test
- ```
-#### Run Docker LDAP! 
- ```bash
- # docker run --net test --ip 172.18.0.2 -h ldap.edt.org --name ldap -it antagme/ldap_supervisor:zabbix_pam_tls
- ```  
-
-#### Run Docker Kerberos (TGT)  
- ```bash
- # docker run --net test --ip 172.18.0.3 -h kserver.edt.org --name kerberos -it antagme/kerberos:supervisord
- ```
- 
-#### Run Docker Client (PAM for Authconfig with LDAP+Kerberos)  
- ```bash
- # docker run --net test --ip 172.18.0.8 -h client.edt.org --name client -it antagme/client:pam_tls
- ```
- 
-#### Run Docker LDAP REPLICA
- ```bash
- # docker run --net test --ip 172.18.0.4 -h ldaprepl.edt.org --name replica -it antagme/ldap_replica:latest
- ```
- 
-#### Run Docker Zabbix (Apache + Zabbix Monitoring each Container + Monitoring through Trapper LDAP MONITOR DB)  
- ```bash
- # docker run --net test --ip 172.18.0.10 -h zabbix.edt.org --name zabbix -it antagme/httpd:zabbix
- ```
-
-#### Nota important.
-_Es Molt important seguir l'ordre per rebre correctament les dades del DNS , encara que si falles, nomes hauria que reiniciarse el Daemon NSLCD al docker que falla_
-
-### Under Construction...
-
-- [x] Zabbix Server Working in Ubuntu
-- [ ] Put supervisord in all computers
-- [ ] Put TLS on nslcd communication.
-- [ ] Create a PAM for auth krb5 and/or unix ldap.
-
- 
- ![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-- |Client Autoritçat per GSSAPI , i per SASL EXTERNAL|
-- |Serveis instalats: Slapd , nslcd , nginx|
-- |Clients Agafen tickets d'un docker kerberos per auth|
-- | LDAP fa de dns als ordinadors de la xarxa |
-
+![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
 ## Appendix
 
