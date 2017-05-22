@@ -1,5 +1,5 @@
 FROM fedora
-MAINTAINER "Antonia Aguado Mercado" <nomail@gmail.com> 
+MAINTAINER "Pedro Romero Aguado" <pedroromeroaguado@gmail.com> 
 #installs
 RUN dnf install -y procps openldap openldap-servers openldap-clients krb5-workstation cyrus-sasl-gssapi cyrus-sasl-ldap nss-pam-ldapd supervisor cronie zabbix-agent python-ldap
 # directoris
@@ -33,4 +33,3 @@ RUN setfacl -m u:ldap:r /etc/krb5.keytab
 RUN /usr/bin/chmod +x /scripts/startup-slapd.sh & bash /scripts/startup-slapd.sh ; exit 0
 #VOLUME [/var/tmp/backup] 
 ENTRYPOINT ["/usr/bin/supervisord", "-c","/etc/supervisord.d/supervisord.ini"]
-EXPOSE 389 587 993 4190 8001  
