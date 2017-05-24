@@ -30,6 +30,6 @@ RUN cp /opt/docker/krb5.keytab /etc/
 RUN chmod 640 /etc/krb5.keytab
 RUN setfacl -m u:ldap:r /etc/krb5.keytab
 #make executable and execute the ldap database and populate
-RUN /usr/bin/chmod +x /scripts/startup-slapd.sh & bash /scripts/startup-slapd.sh ; exit 0
+RUN /usr/bin/chmod +x /scripts/startup-slapd.sh && bash /scripts/startup-slapd.sh ; exit 0
 #VOLUME [/var/tmp/backup] 
 ENTRYPOINT ["/usr/bin/supervisord", "-c","/etc/supervisord.d/supervisord.ini"]
